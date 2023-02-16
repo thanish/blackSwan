@@ -15,11 +15,15 @@ def get_entities(text, language_code):
     print(f"The Language chosen is {language_code}")
     print(f"The corresponding model is {model} \n")
     
-          
-    # Installing the model
-    print("Installing the model")
-    install_str = 'python3 -m spacy download ' + model
-    os.system(install_str)
+   # Installing the model if not already installed
+    try:
+        spacy.load(model)
+    except:
+        print("The package is not installed, so installing")
+        install_str = 'python3 -m spacy download ' + model
+        os.system(install_str)    
+    else:
+        print("The package is installed")
 
     # Loading the spacy model
     NER = spacy.load(model)
