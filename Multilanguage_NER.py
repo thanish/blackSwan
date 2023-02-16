@@ -13,7 +13,7 @@ def get_entities(text, language_code):
         model = f"xx_ent_wiki_sm"
     
     print(f"The Language chosen is {language_code}")
-    print(f"The corresponding model is {model}")
+    print(f"The corresponding model is {model} \n")
     
           
     # Installing the model
@@ -30,7 +30,6 @@ def get_entities(text, language_code):
     # Initialize a emtpy entity list
     entity_list = []
     for word in text.ents:
-        print(word.text, word.label_, word.start_char,word.end_char)
 
         # Initialize a emtpy entity dict
         entity_dict = {}
@@ -42,3 +41,7 @@ def get_entities(text, language_code):
         entity_list.append(entity_dict)
         
     return entity_list
+
+
+Sentence = "I work at Amazon for a very long time"
+get_entities(text=Sentence, language_code="en")
