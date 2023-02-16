@@ -43,5 +43,5 @@ def get_entities(text, language_code):
     return entity_list
 
 
-Sentence = "I work at Amazon for a very long time"
+Sentence = "I work at Amazon for a very long time and Im from India"
 get_entities(text=Sentence, language_code="en")
